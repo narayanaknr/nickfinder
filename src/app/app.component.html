@@ -1,0 +1,86 @@
+<mat-toolbar class="mat-elevation-z8">
+  <button
+    mat-icon-button
+    *ngIf="sidenav.mode === 'over'"
+    (click)="sidenav.toggle()"
+  >
+    <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+    <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+  </button>
+  Nick Finder
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+    <button
+      mat-button
+      class="menu-button"
+      [routerLink]="['/fancy-text']"
+      routerLinkActive="is-active"
+    >
+      <span>Fancy text symbols</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="combine-names">
+      <span>Combine two names</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="nickname">
+      <span>Nickname to symbols</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="cool-text">
+      <span>Cool text generator</span>
+    </button>
+
+    <button mat-button class="menu-button divider">
+      <span>CATEGORIES</span>
+    </button>
+
+    <button mat-button class="menu-button">
+      <span>Grouped by symbols</span>
+    </button>
+    <button mat-button class="menu-button">
+      <span>Boy names</span>
+    </button>
+    <button mat-button class="menu-button">
+      <span>Girl names</span>
+    </button>
+    <button mat-button class="menu-button">
+      <span>Password generator</span>
+    </button>
+    <button mat-button class="menu-button">
+      <span>Names for Website</span>
+    </button>
+    <button mat-button class="menu-button divider">
+      <span>OTHER</span>
+    </button>
+    <button mat-button class="menu-button">
+      <span>Contacts</span>
+    </button>
+    <button mat-button class="menu-button">
+      <span>Terms of use</span>
+    </button>
+    <button mat-button class="menu-button">
+      <span>Cookie Policy</span>
+    </button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <section class="content-header">
+      <h1>Nicknames and Names</h1>
+    </section>
+    <section class="content">
+      <div class="row">
+        <div class="col-lg-9 no_lr_padding_on_phones no_right_padding_lg">
+          <router-outlet></router-outlet>
+        </div>
+        <div class="col-lg-3 no_lr_padding_on_phones no_right_padding_lg">
+          <app-recent-nicknames></app-recent-nicknames>
+          <app-papularity-trends></app-papularity-trends>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div>
+        <app-footer></app-footer>
+      </div>
+    </section>
+  </mat-sidenav-content>
+</mat-sidenav-container>
