@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -25,11 +26,33 @@ import { CoolTextComponent } from './components/cool-text/cool-text.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RecentNicknamesComponent } from './common/recent-nicknames/recent-nicknames.component';
 import { PapularityTrendsComponent } from './common/papularity-trends/papularity-trends.component';
+import { environment } from 'src/environments/environment';
+import { ComponentsService } from './service/components.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, HomePageComponent, FancyTextComponent, CombineNamesComponent, NicknameSymbolsComponent, GroupedSymbolsComponent, BoyNamesComponent, GirlNamesComponent, PasswordGeneratorComponent, WebsiteNamesComponent, ContactsComponent, TermsUseComponent, CookiePolicyComponent, CoolTextComponent, FooterComponent, RecentNicknamesComponent, PapularityTrendsComponent],
+  declarations: [
+    AppComponent,
+    HomePageComponent,
+    FancyTextComponent,
+    CombineNamesComponent,
+    NicknameSymbolsComponent,
+    GroupedSymbolsComponent,
+    BoyNamesComponent,
+    GirlNamesComponent,
+    PasswordGeneratorComponent,
+    WebsiteNamesComponent,
+    ContactsComponent,
+    TermsUseComponent,
+    CookiePolicyComponent,
+    CoolTextComponent,
+    FooterComponent,
+    RecentNicknamesComponent,
+    PapularityTrendsComponent,
+  ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
@@ -37,8 +60,10 @@ import { PapularityTrendsComponent } from './common/papularity-trends/papularity
     MatButtonModule,
     MatIconModule,
     MatDividerModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
   ],
-  providers: [],
+  providers: [ComponentsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
