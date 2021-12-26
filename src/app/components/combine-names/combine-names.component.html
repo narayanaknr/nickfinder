@@ -16,56 +16,56 @@
           class="one_generated_variant vt_df_bg one_mixed_variant"
           data-clipboard-text="XzaI"
         >
-          XzaI&nbsp;<i class="fa nfi-copy"></i>
+          {{mixedWord[0]}}&nbsp;<i class="fa nfi-copy"></i>
         </div>
         <div
           class="one_generated_variant vt_df_bg one_mixed_variant"
           data-clipboard-text="YaretVion"
         >
-          YaretVion&nbsp;<i class="fa nfi-copy"></i>
+          {{mixedWord[1]}}&nbsp;<i class="fa nfi-copy"></i>
         </div>
         <div
           class="one_generated_variant vt_df_bg one_mixed_variant"
           data-clipboard-text="OnYare"
         >
-          OnYare&nbsp;<i class="fa nfi-copy"></i>
+          {{mixedWord[2]}}&nbsp;<i class="fa nfi-copy"></i>
         </div>
         <div
           class="one_generated_variant vt_df_bg one_mixed_variant"
           data-clipboard-text="YaretzVion"
         >
-          YaretzVion&nbsp;<i class="fa nfi-copy"></i>
+          {{mixedWord[3]}}&nbsp;<i class="fa nfi-copy"></i>
         </div>
         <div
           class="one_generated_variant vt_df_bg one_mixed_variant"
           data-clipboard-text="ZavionYare"
         >
-          ZavionYare&nbsp;<i class="fa nfi-copy"></i>
+          {{mixedWord[4]}}&nbsp;<i class="fa nfi-copy"></i>
         </div>
       </div>
       <div class="col-md-6 no_lr_padding_on_phones">
         <div class="row">
           <div class="col-xs-6" style="padding-right: 5px">
             <input
+            [(ngModel)]="name1"
               type="text"
               id="mix_name_1"
               name="mix_name_1"
               onkeyup="this.value = this.value.replace(/[^a-zA-Zа-яА-ЯЁё]/g, '');"
               class="form-control input-sm bold"
               placeholder="Name 1..."
-              value="Xzavion"
             />
             <div class="height_7_pt"></div>
           </div>
           <div class="col-xs-6" style="padding-left: 5px">
             <input
+            [(ngModel)]="name2"
               type="text"
               id="mix_name_2"
               name="mix_name_2"
               onkeyup="this.value = this.value.replace(/[^a-zA-Zа-яА-ЯЁё]/g, '');"
               class="form-control input-sm bold"
               placeholder="Name 2..."
-              value="Yaretzi"
             />
             <div class="height_7_pt"></div>
           </div>
@@ -73,6 +73,7 @@
         <div class="row">
           <div class="col-xs-6" style="opacity: 0.8; padding-right: 5px">
             <input
+            [(ngModel)]="name3"
               type="text"
               id="mix_name_3"
               name="mix_name_3"
@@ -84,6 +85,7 @@
           </div>
           <div class="col-xs-6" style="opacity: 0.8; padding-left: 5px">
             <input
+            [(ngModel)]="name4"
               type="text"
               id="mix_name_4"
               name="mix_name_4"
@@ -94,14 +96,14 @@
             <div class="height_7_pt"></div>
           </div>
         </div>
-        <div id="just_mixed_and_selected" style="display: none">
+        <div id="just_mixed_and_selected" style="display: flex">
           <small class="hidden-xs">Already copied to the clipboard</small>
           <input id="just_m_value" type="text" class="form-control" />
           <div class="height_7_pt"></div>
         </div>
         <span
           id="main_mix_btn"
-          class="btn btn-warning btn-block generator_main_btn"
+          class="btn btn-warning btn-block generator_main_btn" (click)="mixWords()"
           >Mix Again</span
         >
       </div>
