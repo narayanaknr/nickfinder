@@ -15,6 +15,11 @@ export class ComponentsService {
   getTopFifty() {
     return this.angularFirestore.collection('top-fifty').snapshotChanges();
   }
+  getPopularityTrends() {
+    return this.angularFirestore
+      .collection('popularity-trends')
+      .snapshotChanges();
+  }
   // createRandomNicknames(nickname: any) {
   //   return this.angularFirestore.collection('random-nicknames').add(nickname);
   // }

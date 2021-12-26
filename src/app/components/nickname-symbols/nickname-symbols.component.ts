@@ -3,13 +3,11 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-nickname-symbols',
   templateUrl: './nickname-symbols.component.html',
-  styleUrls: ['./nickname-symbols.component.scss']
+  styleUrls: ['./nickname-symbols.component.scss'],
 })
 export class NicknameSymbolsComponent implements OnInit {
+  myTemplate: any = '';
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
